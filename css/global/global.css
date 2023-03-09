@@ -1,0 +1,87 @@
+.conteiner{
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Restar estilos css */
+
+
+input,button{
+  padding: 0;
+  margin: 0;
+}
+body{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+p,li,h1,h3,h2,h4{
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+img{
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+.botao-segundario{
+  position: relative;
+  color: white;
+  background-color: var(--cor-cE2);
+  padding: 8px 8px 8px 8px;    
+  border-radius: 4px;
+  max-width: max-content;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+
+}
+.botao-matricula{
+  color: white;
+  background-color: #1188EE;
+  padding: 8px 8px 8px 8px;    
+  border-radius: 4px;
+  max-width: max-content;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.botao-matricula:hover{
+  background-color: #0d71c9;
+  transition: .2s;
+}
+.botao-segundario:hover{
+  background-color: var(--cor-cE3);
+  transition: .2s;
+}
+.botao-segundario::after{
+    content:"";
+    display: inline-block;
+    width: 18px;
+    height: 10px;
+    margin-left: 30px;
+    background: url(../../icones/seta.svg) no-repeat;
+    transition: transform .2s;
+
+}
+.botao-segundario:hover:after {
+  transform: translateX(6px);
+}
+
+.d-none{
+  display: none;
+}

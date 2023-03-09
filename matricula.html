@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="icones/surfbot-icon.svg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Alice&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <title>Matricula</title>
+</head>
+
+<body>
+  <header>
+    <div class="menu-princ">
+      <nav class="conteiner config-menu">
+        <a href="index.html"><img src="surfbot-logo.svg" alt=""></a>
+          <ul class="cor-w font-botao-menu-18 nav-mobile ajuste-menu">
+            <li><a href="#">Praia</a></li>
+            <li><a href="#">Aulas</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="matricula.html">Matricule-se</a></li>
+            <div class="div-wave">
+              <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#18242E" />
+                </g>
+            </svg>
+            </div>
+          </ul>
+        <button class="menu-mobile" >
+          <img src="icones/pranca-branca.svg" alt="">
+        </button>
+      </nav>
+    </div>
+    <h1 class="font-titulo titulo-matricula bg-aulas cor-cE2">Matricule-se</h1>
+  </header>
+  <div class="conteiner">
+    <form action="resposta.html" method="POST" class="matricula form-matricula" onsubmit="validarMatricula(event)">
+      <div class="inf-pessoal">
+        <div>
+          <label class="font-botao-menu-18 cor-cE2" for="">Nome</label>
+          <input class="font-botao-menu-18" type="text" id="nome">
+        </div>
+        <div>
+          <label class="font-botao-menu-18 cor-cE2" for="">Email</label>
+          <input class="font-botao-menu-18" type="text" id="email">
+        </div>
+        <div>
+          <label class="font-botao-menu-18 cor-cE2" for="">CPF</label>
+          <input class="font-botao-menu-18" type="text" maxlength="14" placeholder="111.111.111-01" id="cpf" oninput="enterCpf()">
+        </div>
+        <div class="input-mesma-linha">
+          <div>
+            <label class="font-botao-menu-18 cor-cE2" for="">Endereço</label>
+            <input class="font-botao-menu-18" type="text" placeholder="Rua, Número e Bairro" id="endereco">
+          </div>
+          <div>
+            <label class="font-botao-menu-18 cor-cE2" for="">Estado</label>
+            <select class="font-botao-menu-18 cor-cE2 classic" id="estado">
+              <option value="0" disabled selected>Selecione o Estado</option>
+              <option value="1">Rio de Janeiro</option>
+              <option value="2">São Paulo</option>
+              <option value="3">Minas Gerais</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-mesma-linha">
+          <div>
+            <label class="font-botao-menu-18 cor-cE2" for="">CEP</label>
+            <input class="font-botao-menu-18" type="text" placeholder="22222-000" maxlength="9" id="cep" oninput="enterCep()">
+          </div>
+          <div>
+            <label class="font-botao-menu-18 cor-cE2" for="">Cidade</label>
+            <select class="font-botao-menu-18 cor-cE2 classic" id="cidade">
+              <option value="0" selected disabled>Selecione a Cidade</option>
+              <option value="1">Rio de Janeiro</option>
+              <option value="2">São Paulo</option>
+              <option value="3">Minas Gerais</option>
+            </select>
+          </div>
+        </div>
+        <div class="pagamento">
+          <span class="cor-a2 font-botao-menu-18">Forma de Pagamento</span>
+          <div class="formas-pagamento">
+            <div class="opcao-forma-1-compra">
+              <div class="teste bg-pagamento">
+                <label class="texto-radio font-botao-menu-18 cor-cE2 selecionado cartao-credito">
+                  <input id="cartao" type="radio" checked="checked" name="pagamento" onclick="formaPagamento()">
+                  <span>Cartão de Crédito</span>
+                </label>
+              </div>
+            </div>
+            <div class="opcao-forma1">
+              <div class="teste bg-pagamento">
+                <label class="texto-radio font-botao-menu-18 cor-cE2 boleto">
+                  <input id="boleto" type="radio" name="pagamento" onclick="formaPagamento()">
+                  Boleto Bancário
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="cartao-credito-campo">
+            <div class="input-mesma-linha">
+              <div>
+                <label class="font-botao-menu-18 cor-cE2" for="">Nome no Cartão</label>
+                <input class="font-botao-menu-18" type="text" placeholder="Nome impresso no cartão">
+              </div>
+              <div>
+                <label class="font-botao-menu-18 cor-cE2" for="">Data de Expiração</label>
+                <div class="ano-mes">
+                  <div class="tamanho-data">
+                    <select class="font-botao-menu-18 cor-cE2 classic" name="" id="">
+                      <option value="0" selected disabled>Mês</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </div>
+                  <div class="tamanho-data">
+                    <select class="font-botao-menu-18 cor-cE2 classic" name="" id="" placeholder="Mês">
+                      <option value="0" selected disabled>Ano</option>
+                      <option value="1">2022</option>
+                      <option value="2">2023</option>
+                      <option value="3">2024</option>
+                      <option value="4">2025</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="input-mesma-linha">
+              <div>
+                <label class="font-botao-menu-18 cor-cE2" for="">Número do Cartão</label>
+                <input class="font-botao-menu-18" type="text" placeholder="5555 5555 5555 5555" maxlength="19"  id="numberCartao" oninput="enterCartao()">
+              </div>
+              <div>
+                <label class="font-botao-menu-18 cor-cE2" for="">Código de Segurança</label>
+                <input class="font-botao-menu-18" type="text" placeholder="XXX" maxlength="3" id="codseguranca" oninput="enterSeguranca()">
+              </div>
+            </div>
+          </div>
+          <div class="boleto-msg d-none">
+            <h2 class="cor-cE2 font-nunuto-24 msg-boleto">NO MOMENTO NÃO ESTAMOS ACEITANDO BOLETO!!</h2>
+          </div>
+        </div>
+        <div class="finalizar">
+          <span class="font-nunuto-18 cor-cE2 margin-bt">Seu cartão será debitado em R$ 49,00</span>
+          <button class="botao-matricula font-botao-menu-18 margin-bt">REALIZAR MATRÍCULA</button>
+          <div class="aviso-seguranca margin-bt">
+            <img src="fotos/cadeado.svg" alt="">
+            <span class="font-nunuto-14 cor-cE2">Informações seguras e criptografadas</span>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-plano">
+        <div class="bg-aulas escolha-plano">
+          <h3 class="font-botao-menu-18">Escolha o Plano</h3>
+          <div class="formas">
+            <div class="opcao-forma-1 gap-entre selecionado">
+              <div class="teste">
+                <label class="texto-radio font-botao-menu-18 cor-cE2">
+                  <input id="infa" type="radio" checked="checked" name="tipo" onclick="selecionePlano()">
+                  Infantil
+                </label>
+              </div>
+            </div>
+            <div class="opcao-forma-2 gap-entre">
+              <div class="teste">
+                <label class="texto-radio font-botao-menu-18  cor-cE2">
+                  <input id="adult" type="radio" name="tipo" onclick="selecionePlano()">
+                  Adulto
+                </label>
+              </div>
+            </div>
+            <div class="opcao-forma-3 gap-entre">
+              <div class="teste">
+                <label class="texto-radio font-botao-menu-18  cor-cE2">
+                  <input id="prof" type="radio" name="tipo" onclick="selecionePlano()">
+                  Profissional
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="plano-matricula">
+            <div class="aulas-preco plano1">
+              <div class="pranchas">
+                <img class="prancha" src="icones/surfbot-icon.svg" alt="">
+              </div>
+              <h3 class="cor-cE2 font-nunuto-24">INFANTIL</h3>
+              <div class="alinhar-centro">
+                <ul class="infos-de-planos font-nunuto-14 cor-cE2">
+                  <li>Público entre 5 e 15 anos</li>
+                  <li>Equipamentos fornecidos</li>
+                  <li>Horários de Sex. à Sab</li>
+                  <li>2 horas seguidas de aula</li>
+                </ul>
+              </div>
+              <div class="info-compra">
+                <span class="cor-a2 font-nunuto-14 bold">R$ 69,00 / Aula</span>
+              </div>
+            </div>
+            <div class="aulas-preco plano2 d-none">
+              <div class="pranchas">
+                <img class="prancha" src="icones/surfbot-icon.svg" alt="">
+                <img class="prancha" src="icones/surfbot-icon.svg" alt="">
+              </div>
+              <h3 class="cor-cE2 font-nunuto-24">ADULTO</h3>
+              <div class="alinhar-centro">
+                <ul class="infos-de-planos font-nunuto-14 cor-cE2">
+                  <li>Público entre 16 e 80 anos</li>
+                  <li>Equipamentos fornecidos</li>
+                  <li>Horários de Sex. à Sab</li>
+                  <li>3 horas seguidas de aula</li>
+                </ul>
+              </div>
+              <div class="info-compra">
+                <span class="cor-a2 font-nunuto-14 bold">R$ 69,00 / Aula</span>
+              </div>
+            </div>
+            <div class="aulas-preco plano3 d-none">
+              <div class="pranchas">
+                <img class="prancha" src="icones/surfbot-icon.svg" alt="">
+                <img class="prancha" src="icones/surfbot-icon.svg" alt="">
+                <img class="prancha" src="icones/surfbot-icon.svg" alt="">
+              </div>
+              <h3 class="cor-cE2 font-nunuto-24">PROFISSIONAL</h3>
+              <div class="alinhar-centro">
+                <ul class=" infos-de-planos font-nunuto-14 cor-cE2">
+                  <li>Experiência de 3 anos no surf</li>
+                  <li>Você deve trazer o equipamento</li>
+                  <li>Horários de Sex. à Sab</li>
+                  <li>4 horas seguidas de aula</li>
+                </ul>
+              </div>
+              <div class="info-compra">
+                <span class="cor-a2 font-nunuto-14 bold">R$ 69,00 / Aula</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <footer class="bg-color-footer">
+    <div class="conteiner footer-flex">
+      <p class="font-botao-menu-18 cor-w">Surfnet 2017 - Alguns direitos reseervados...</p>
+      <img src="icones/pranca-branca.svg" alt="">
+    </div>
+  </footer>
+  <script type="module" src="js/js.js"></script>
+  <script src="js/validarMatricula.js"></script>
+</body>
+
+</html>

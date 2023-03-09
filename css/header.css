@@ -1,0 +1,111 @@
+.haeder-bg {
+  background-image: url(../fotos/seth-doyle-151914.jpg);
+  height: 600px;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  background-position: 45% 62%;
+}
+
+.header-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 600px;
+  gap: 0 60px;
+}
+
+.header-titulo{
+  align-self: end;
+  padding-bottom: 50px;
+}
+.header-matricula{
+  display: flex;
+  align-self: end;
+  padding-bottom: 60px;
+}
+
+.botao-header {
+  position: relative;
+  background: #EE2B11;
+  border-radius: 0px 5px 5px 0px;
+  display: flex;
+  cursor: pointer;
+  height: 50px;
+  text-transform: uppercase;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 200px;
+  align-items: center;
+}
+
+.botao-header:hover{
+  background: var(--cor-v1);
+  transition: 0.2s;
+}
+.header-matricula input:focus{
+  outline: 0;
+}
+
+.botao-header::after{
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  margin-left: 12px;
+  background: url("../icones/seta.svg") no-repeat;
+  transition: transform .2s;
+}
+.botao-header:hover:after {
+  transform: translateX(6px);
+}
+.header-matricula input{
+  border: none;
+  width: 350px;
+  height: 50px;
+  padding-left: 10px;
+  border-radius: 5px 0px 0px 5px;
+
+}
+@media (max-width:1100px) {
+  .header-conteudo{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding-top: 380px;
+
+  }
+}
+@media (max-width:600px){
+.header-titulo h1{
+  font-size: 50px;
+}
+.header-matricula input{
+  width: 190px;
+}
+.header-matricula{
+  flex-wrap: wrap;
+}
+.botao-header{
+  font-size: 12px;
+  width: 145px;
+  padding-left: 12px;
+  padding-right: 8px;
+}
+.botao-header::before{
+  left: 105px;
+}
+}
+@media (max-width:400px){
+  .botao-header{
+    font-size: 11px;
+    width: 110px;
+    padding-left: 12px;
+    padding-right: 0px;
+  }
+  .botao-header::after{
+    display: none;
+  }
+  .header-matricula input{
+    width: 165px;
+  }
+}

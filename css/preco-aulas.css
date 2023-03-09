@@ -1,0 +1,171 @@
+.bg-aulas{
+  background-color: #EFF4F9;
+}
+.grid-aulas-preco{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+.flex{
+  display: flex;
+  margin-bottom: 60px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.aulas-preco h3{
+  font-weight: bold;
+  text-align: center;
+}
+.aulas-preco{
+  background-color:white ;
+  padding: 0px 40px 60px 40px;
+  max-width: 100%;
+  box-shadow: 0 10px 10px rgba(187, 204, 221, 0.2), 0 5px 5px rgba(187, 204, 221, 0.2);
+  border-radius: 5px;
+ 
+}
+
+.pd-b{
+  padding-bottom: 60px;
+}
+
+.aulas-preco li{
+  line-height: 245%;
+  white-space: nowrap;
+}
+
+.info-compra{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aulas-preco ul{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.aulas-preco span{
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.aulas-preco li::before{
+  content: '';
+  height: 6px;
+  display: inline-block;
+  position: relative;
+  width: 6px;
+  border-radius: 50%;
+  left: -5px;
+  border: 2px solid var(--cor-v1);
+}
+
+.contato-desconto{
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.separador{
+  position: relative;
+}
+
+.separador::before{
+  position: absolute;
+  content:"";
+  width: 88px;
+  height: 2px;
+  background: #FF3726;
+  top: 25px;
+}
+
+.ondas{
+  position: absolute;
+  top: -30px;
+}
+
+.onadas-cima{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.pranchas{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -20px;
+}
+
+.prancha{
+  position:relative;
+  margin-left: 5px;
+}
+.img-fundo{
+  background: url('../fotos/foto-quote.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  background-size: cover;
+}
+.frase-regis{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}
+.frase-regis h2{
+  line-height: 74px;
+  max-width: 42.5rem;
+  margin-bottom: 30px;
+}
+
+@media(max-width:950px){
+  .aulas-preco{
+    padding: 0px 20px 50px 20px;
+  }
+  .grid-aulas-preco{
+    gap: 10px;
+  }
+
+}
+@media(max-width:800px){
+.grid-aulas-preco{
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+.img-fundo{
+  background-position-x: 20%;
+}
+
+.aulas-preco li{
+  font-size: 14px;
+}
+.info-compra{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.info-aulas span{
+  font-size: 14px;
+}
+.frase-regis h2{
+  font-size: 3.5rem;
+}
+.infos-de-planos{
+  display: grid;
+
+}
+.mobile-plano{
+  width: 100%;
+}
+
+}

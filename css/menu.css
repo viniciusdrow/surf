@@ -1,0 +1,95 @@
+.menu-cima{
+  background-color: var(--cor-a1);
+  padding: 10px 10px;
+}
+
+.menu-cima p{
+  color: white;
+}
+
+.menu-princ{
+  background-color: var(--cor-cE3);
+}
+.config-menu{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.config-menu ul{
+  display: flex;
+  position: relative;
+  gap: 40px;
+  flex-wrap: wrap;
+  
+}
+.config-menu li{
+  align-items: center;
+}
+
+.config-menu a:hover{
+ color: var(--cor-v2);
+ transition: 0.4s;
+}
+.config-menu li:nth-last-child(n+2)::after{
+  content: '';
+  height: 8px;
+  display: inline-block;
+  position: relative;
+  width: 8px;
+  border-radius: 50%;
+  border: 2px solid white;
+  left: 20px;
+}
+.config-menu li:nth-child(4)::before{
+  content: '';
+  position: absolute;
+  width: 104px;
+  height: 2px;
+  background-color: var(--cor-v2);
+  bottom: 0px;
+}
+.config-menu li:nth-child(4)::after{
+  display: none;
+}
+
+@media(max-width:700px){
+  .config-menu a{
+   font-size: 13px;
+  }
+  .config-menu li:nth-last-child(n+2)::after{
+    left: 15px;
+    height: 6px;
+    width: 6px;
+  }
+  .config-menu ul{
+    gap: 30px;
+  }
+  .config-menu li:nth-child(4)::before{
+    width: 80px;
+  }
+  .menu-cima p{
+ font-size: 13px;
+  }
+}
+@media(max-width:400px){
+  .config-menu a{
+   font-size: 12px;
+  }
+  .config-menu li:nth-last-child(n+2)::after{
+    left: 10px;
+    height: 4px;
+    width: 4px;
+  }
+  .config-menu ul{
+    gap: 20px;
+  }
+  .config-menu li:nth-child(4)::before{
+    width: 70px;
+  }
+  .menu-cima p{
+    font-size: 11px;
+     }
+}
